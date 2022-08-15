@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:run": "npx playwright test --headed"
+    "test:run": "npx playwright test --reporter=allure-playwright tests/**.tests.spec.ts --headed",
+    "allure:report": "allure generate allure-results --clean",
+    "allure:open": "allure open ./allure-report"
   },
   "repository": {
     "type": "git",
@@ -18,9 +20,11 @@
   "homepage": "https://github.com/yauhenirusakovich/Diplom_PlayWright#readme",
   "devDependencies": {
     "@playwright/test": "^1.25.0",
+    "allure-playwright": "^2.0.0-beta.19",
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "allure-commandline": "^2.18.1",
     "prettier": "^2.7.1"
   }
 }
