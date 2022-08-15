@@ -1,0 +1,26 @@
+{
+  "name": "diplom_playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:run": "npx playwright test --headed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yauhenirusakovich/Diplom_PlayWright.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yauhenirusakovich/Diplom_PlayWright/issues"
+  },
+  "homepage": "https://github.com/yauhenirusakovich/Diplom_PlayWright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.25.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "prettier": "^2.7.1"
+  }
+}
