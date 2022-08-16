@@ -5,63 +5,67 @@ import { locatorsForOnliner } from './locatorsForOnliner/locatorsForOnliner'
 
 test.describe('negative tests', async () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto(constants.onlinerUrl)
+        await page.goto(constants.ONLINER_URL)
     })
     test('negative test 1', async ({ page }) => {
-        const resPage = new onlinerPage(page)
-        await resPage.findElement(locatorsForOnliner.searchInput)
-        await resPage.typeText(
+        const RES_PAGE = new onlinerPage(page)
+        await RES_PAGE.findElement(locatorsForOnliner.searchInput)
+        await RES_PAGE.typeText(
             locatorsForOnliner.searchInput,
-            constants.autoSearch
+            constants.NEGATIVE_AUTOSEARCH
         )
-        await resPage.pressEnter()
-        await expect(page).toHaveURL(constants.negativeOnlinerUrl)
+        await RES_PAGE.pressEnter()
+        await expect(page).toHaveURL(constants.NEGATIVE_ONLINER_URL)
     })
 
     test('negative test 2', async ({ page }) => {
-        const resPage = new onlinerPage(page)
-        await resPage.findElementClickAndWait(locatorsForOnliner.inputButton)
-        await resPage.findElement(locatorsForOnliner.autorizationButton)
-        const textRes = await resPage.getText(locatorsForOnliner.regButton)
-        await expect(textRes).toContain(constants.negativeOnlinerRes)
+        const RES_PAGE = new onlinerPage(page)
+        await RES_PAGE.findElementClickAndWait(locatorsForOnliner.inputButton)
+        await RES_PAGE.findElement(locatorsForOnliner.autorizationButton)
+        const textRes = await RES_PAGE.getText(locatorsForOnliner.regButton)
+        await expect(textRes).toContain(constants.NEGATIVE_ONLINER_RES)
     })
 
     test('negative test 3', async ({ page }) => {
-        const resPage = new onlinerPage(page)
-        await resPage.findElementClickAndWait(locatorsForOnliner.gameOnliner)
-        await resPage.findElement(locatorsForOnliner.gameHeaderTitle)
-        await expect(page).toHaveURL(constants.negativeGameAdress)
+        const RES_PAGE = new onlinerPage(page)
+        await RES_PAGE.findElementClickAndWait(locatorsForOnliner.gameOnliner)
+        await RES_PAGE.findElement(locatorsForOnliner.gameHeaderTitle)
+        await expect(page).toHaveURL(constants.NEGATIVE_GAME_ADRESS)
     })
 
     test('negative test 4', async ({ page }) => {
-        const resPage = new onlinerPage(page)
-        await resPage.findElementClickAndWait(locatorsForOnliner.findBuscet)
-        const busketRes = await resPage.getText(locatorsForOnliner.busketCheck)
-        await expect(busketRes).toContain(constants.negativeCheckPunkt)
+        const RES_PAGE = new onlinerPage(page)
+        await RES_PAGE.findElementClickAndWait(locatorsForOnliner.findBuscet)
+        const BUSKET_RES = await RES_PAGE.getText(
+            locatorsForOnliner.busketCheck
+        )
+        await expect(BUSKET_RES).toContain(constants.NEGATIVE_CHECK_PUNKT)
     })
 
     test('negative test 5', async ({ page }) => {
-        const resPage = new onlinerPage(page)
-        await resPage.findElementClickAndWait(
+        const RES_PAGE = new onlinerPage(page)
+        await RES_PAGE.findElementClickAndWait(
             locatorsForOnliner.catalogOnlinerLocator
         )
-        await expect(page).toHaveURL(constants.negativeCatalogOnlinerPage)
+        await expect(page).toHaveURL(constants.NEGATIVE_CATALOG_ONLINER_PAGE)
     })
 
     test('negative test 6', async ({ page }) => {
-        const resPage = new onlinerPage(page)
-        await resPage.findElementClickAndWait(
+        const RES_PAGE = new onlinerPage(page)
+        await RES_PAGE.findElementClickAndWait(
             locatorsForOnliner.companyLocatorFind
         )
-        const companyRes = await resPage.getText(
+        const COMPANY_RES = await RES_PAGE.getText(
             locatorsForOnliner.companyLocatorText
         )
-        await expect(companyRes).toContain(constants.negativeCompanyText)
+        await expect(COMPANY_RES).toContain(constants.NEGATIVE_COMPANY_TEXT)
     })
 
     test('negative test 7', async ({ page }) => {
-        const resPage = new onlinerPage(page)
-        await resPage.findElementClickAndWait(locatorsForOnliner.currencyAmount)
-        await expect(page).toHaveURL(constants.negativeCurrencyPage)
+        const RES_PAGE = new onlinerPage(page)
+        await RES_PAGE.findElementClickAndWait(
+            locatorsForOnliner.currencyAmount
+        )
+        await expect(page).toHaveURL(constants.NEGATIVE_CURRENCY_PAGE)
     })
 })
