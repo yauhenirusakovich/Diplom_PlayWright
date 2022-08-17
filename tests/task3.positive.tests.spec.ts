@@ -47,7 +47,7 @@ test.describe('positive tests', async () => {
         await RES_PAGE.findElementClickAndWait(
             locatorsForOnliner.catalogOnlinerLocator
         )
-        await expect(page).toHaveURL(constants.CATALOG_ONLIBER_PAGE)
+        await expect(page).toHaveURL(constants.CATALOG_ONLINER_PAGE)
     })
 
     test('positive test 6', async ({ page }) => {
