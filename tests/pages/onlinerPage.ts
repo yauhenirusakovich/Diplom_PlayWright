@@ -18,14 +18,14 @@ export class onlinerPage {
     }
 
     async typeText(selector: string, text: string) {
-        await this.page.type(selector, text)
+        await this.page.type(selector, text, { delay: 50 })
     }
 
     async pressEnter() {
-        await this.page.keyboard.press(constants.pressEnter)
+        await this.page.keyboard.press(constants.PRESS_ENTER)
     }
 
-    async getText(locator) {
+    async getText(locator: string) {
         return this.page.innerText(locator)
     }
 }
